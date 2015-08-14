@@ -41,7 +41,6 @@
 		<dependency>
 			<groupId>at.chrl</groupId>
 			<artifactId>chrl-orm-spring-integration</artifactId>
-			<version>${chrlVersion}</version>
 		</dependency>
 		<!-- Servlet -->
 		<dependency>
@@ -85,6 +84,10 @@
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>at.chrl</groupId>
+			<artifactId>chrl-vaadin-webglobe</artifactId>
 		</dependency>
 	</dependencies>
 	<!--  -->

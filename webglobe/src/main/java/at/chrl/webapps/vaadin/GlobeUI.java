@@ -31,7 +31,7 @@ import at.chrl.vaadin.webglobe.Webglobe;
  * 14.08.2015 - 23:07:54
  *
  */
-@Title("Diango")
+@Title("ChRL Webglobe")
 @Component("ui")
 @PreserveOnRefresh
 public class GlobeUI extends UI {

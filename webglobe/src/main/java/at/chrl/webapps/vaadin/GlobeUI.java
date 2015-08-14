@@ -17,6 +17,7 @@
  */
 package at.chrl.webapps.vaadin;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import com.vaadin.annotations.PreserveOnRefresh;
@@ -33,6 +34,7 @@ import at.chrl.vaadin.webglobe.Webglobe;
  */
 @Title("ChRL Webglobe")
 @Component("ui")
+@Scope(value = "prototype")
 @PreserveOnRefresh
 public class GlobeUI extends UI {
 
@@ -47,7 +49,7 @@ public class GlobeUI extends UI {
 	 */
 	@Override
 	protected void init(VaadinRequest request) {
-		setContent(new Webglobe());
+		setContent(new Webglobe("world.jpg"));
 	}
 
 }

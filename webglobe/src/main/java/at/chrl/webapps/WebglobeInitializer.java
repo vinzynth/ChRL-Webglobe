@@ -70,4 +70,13 @@ public class WebglobeInitializer extends AbstractWebAppInitializer {
 		return new Class<?>[]{ WebMvcConfig.class, SpringConfig.class };
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * @see at.chrl.spring.config.AbstractWebAppInitializer#getServletMappings()
+	 */
+	@Override
+	protected String[] getServletMappings() {
+		return new String[]{"/spring/"};
+	}
+	
 }

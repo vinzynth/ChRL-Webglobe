@@ -23,7 +23,9 @@ import org.springframework.stereotype.Component;
 import com.vaadin.annotations.PreserveOnRefresh;
 import com.vaadin.annotations.Title;
 import com.vaadin.server.VaadinRequest;
+import com.vaadin.ui.GridLayout;
 import com.vaadin.ui.UI;
+import com.vaadin.ui.Window;
 
 import at.chrl.vaadin.webglobe.Webglobe;
 
@@ -49,7 +51,17 @@ public class GlobeUI extends UI {
 	 */
 	@Override
 	protected void init(VaadinRequest request) {
-		setContent(new Webglobe("world.jpg"));
+		
+		setContent(new Webglobe("/webglobe/world3.jpg"));
+		
+		addWindow(new Window("World 2", 
+				new Webglobe("/webglobe/world1.jpg")));
+
+		addWindow(new Window("World 3", 
+				new Webglobe("/webglobe/world2.jpg")));
+
+		addWindow(new Window("World 4", 
+				new Webglobe("/webglobe/world.jpg")));
 	}
 
 }

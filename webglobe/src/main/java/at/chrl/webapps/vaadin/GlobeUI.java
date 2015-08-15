@@ -23,7 +23,6 @@ import org.springframework.stereotype.Component;
 import com.vaadin.annotations.PreserveOnRefresh;
 import com.vaadin.annotations.Title;
 import com.vaadin.server.VaadinRequest;
-import com.vaadin.ui.GridLayout;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Window;
 

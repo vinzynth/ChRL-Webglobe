@@ -17,6 +17,8 @@
  */
 package at.chrl.webapps.vaadin;
 
+import java.util.Collection;
+
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -24,8 +26,9 @@ import com.vaadin.annotations.PreserveOnRefresh;
 import com.vaadin.annotations.Title;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.UI;
-import com.vaadin.ui.Window;
 
+import at.chrl.nutils.CollectionUtils;
+import at.chrl.nutils.Rnd;
 import at.chrl.vaadin.webglobe.Webglobe;
 
 /**
@@ -51,16 +54,17 @@ public class GlobeUI extends UI {
 	@Override
 	protected void init(VaadinRequest request) {
 		
-		setContent(new Webglobe("/webglobe/world3.jpg"));
+		Webglobe webglobe = new Webglobe("/webglobe/world.jpg");;
 		
-		addWindow(new Window("World 2", 
-				new Webglobe("/webglobe/world1.jpg")));
-
-		addWindow(new Window("World 3", 
-				new Webglobe("/webglobe/world2.jpg")));
-
-		addWindow(new Window("World 4", 
-				new Webglobe("/webglobe/world.jpg")));
+		Collection<double[]> data = CollectionUtils.newList();
+		for (int i = 0; i < 10_000; i++) {
+			data.add(new double[]{(double) Rnd.get(-90, 90), (double) Rnd.get(-180, 180), Rnd.nextDouble()});
+		}
+		
+		webglobe.addData(data.toArray(new double[][]{}));
+		
+		setContent(webglobe);
+		
 	}
 
 }
